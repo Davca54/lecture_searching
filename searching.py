@@ -32,10 +32,33 @@ def read_data(file_name, field):
     else:
         return None
 
+def linear_search(searched_data, searched_number):
+    slovnik = {}
+    seznam_dvojic = []
+    count = 0
+    for i, value in enumerate(searched_data):
+        if searched_number == value:
+            count += 1
+            seznam_dvojic.append(i)
+
+    slovnik["positions"] = seznam_dvojic
+    slovnik["count"] = count
+    return slovnik
+
+
+
+
+
+
+
+
 
 def main():
     my_data = read_data("sequential.json", "unordered_numbers")
     print(my_data)
+
+    data = linear_search(my_data, 0)
+    print(data)
 
 if __name__ == "__main__":
     main()
